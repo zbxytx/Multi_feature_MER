@@ -67,7 +67,7 @@ def avg_score(data, label, sub_list, kernel='rbf', C=2, gamma=10, degree=3, deci
     acc_score = metrics.accuracy_score(real_list, result_list)
     f1_score = metrics.f1_score(real_list, result_list, average = average)
 
-    return acc_score, f1_score, np.mean(f1_list)
+    return np.mean(score_list), acc_score, f1_score, np.mean(f1_list)
 
 def get_best_average(data, labels, sub_list, kernel='linear', split='loso', average='macro'):
     print('kernel=', kernel, 'split=', split, 'average=', average)
