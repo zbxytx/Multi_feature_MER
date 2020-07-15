@@ -58,7 +58,7 @@ target_length:	目标帧数
 
 用于提取图像序列的特征，包括LBP-TOP、3DHOG、HOOF
 使用方法：调用函数	get_ep_features(ep, uniform_dict = None, feature='LBP-TOP', t_times=4, y_times=4, x_times=4,
-                    			x_radius = 1, y_radius = 1, t_radius = 4, xy_neighbor = 8, xt_neighbor = 8, yt_neighbor = 8,
+                    			x_radius = 1, y_radius = 1, t_radius = 4, xy_neighbor=8, xt_neighbor=8, yt_neighbor=8,
                     			xy_bins = 8, xt_bins = 12, yt_bins = 12,
                     			bins=8)
 
@@ -102,3 +102,5 @@ e. 随后程序对图像序列进行动作放大，其中放大频率区间为[0
 f. 随后对图像序列进行时序插值，目标帧数为10帧
 g. 随后对图像序列提取LBP-TOP、3DHOG、HOOF特征，存放于result/features/LBP_feature.npy (或HOG_feature.npy, HOOF_feature.npy)
 h. 随后分别对特征使用svm进行分类，输出最好的分类结果与对应的svm参数
+
+注意，main.py中参数并非最优，在实际使用时注意调整参数（包括TIM目标帧数、动作放大因子、特征提取分块数等）
